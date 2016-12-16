@@ -12,12 +12,12 @@ while(1):
   hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
   
   
-  lower_blue = np.array([60,100,90])
+  lower_blue = np.array([60,100,90])#RGB value of the Object to be used for detection
   upper_blue = np.array([110,255,255])
   
 
   mask = cv2.inRange(hsv, lower_blue, upper_blue)
-  mask = cv2.erode(mask, None, iterations=2)
+  mask = cv2.erode(mask, None, iterations=2) #to remove small blobs
   mask = cv2.dilate(mask, None, iterations=2)
  
   res = cv2.bitwise_and(image,image, mask= mask)
@@ -43,9 +43,9 @@ while(1):
   au.moveTo(center[0]*5.13,center[1]*2.25)
 
 
-  cv2.imshow('mask',image)
+  cv2.imshow('mask',image)# comment this out for smooth operation
  
   k = cv2.waitKey(5) & 0xFF
-  if k == 27:
+  if k == 27:#press esc to exit
     break
 cv2.destroyAllWindows()
