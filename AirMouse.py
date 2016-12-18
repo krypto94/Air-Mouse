@@ -40,7 +40,7 @@ while(1):
   radius = int(radius)
   cv2.circle(frame,center,radius,(0,0,255),-1)
   # print center
-  au.moveTo(center[0]*5.13,center[1]*2.25)#srt the constant multiplers according to the screen size,Present values are for 
+  au.moveTo(center[0]*5.13,center[1]*2.25)#set the constant multiplers according to the screen size,Present values are for 
   #screen size : 3286X1080
   cv2.imshow('mask',image)# comment this out for smooth operation
  
